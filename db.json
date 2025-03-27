@@ -1,0 +1,129 @@
+{
+    "products": [
+      {
+        "id": 1,
+        "name": "Wireless Headphones",
+        "price": 50,
+        "category": "Electronics",
+        "image": "headphones.jpg",
+        "stock": 10
+      },
+      {
+        "id": 2,
+        "name": "Smartphone Stand",
+        "price": 20,
+        "category": "Electronics",
+        "image": "stand.jpg",
+        "stock": 15
+      },
+      {
+        "id": 3,
+        "name": "Bluetooth Speaker",
+        "price": 40,
+        "category": "Electronics",
+        "image": "speaker.jpg",
+        "stock": 8
+      },
+      
+      {
+        "id": 4,
+        "name": "Running Shoes",
+        "price": 75,
+        "category": "Fashion",
+        "image": "shoes.jpg",
+        "stock": 5
+      },
+      {
+        "id": 5,
+        "name": "Leather Wallet",
+        "price": 35,
+        "category": "Fashion",
+        "image": "wallet.jpg",
+        "stock": 12
+      },
+      {
+        "id": 6,
+        "name": "Sunglasses",
+        "price": 25,
+        "category": "Fashion",
+        "image": "sunglasses.jpg",
+        "stock": 10
+      },
+  
+      {
+        "id": 7,
+        "name": "Yoga Mat",
+        "price": 30,
+        "category": "Fitness",
+        "image": "yogamat.jpg",
+        "stock": 7
+      },
+      {
+        "id": 8,
+        "name": "Dumbbells Set",
+        "price": 60,
+        "category": "Fitness",
+        "image": "dumbbells.jpg",
+        "stock": 6
+      },
+      {
+        "id": 9,
+        "name": "Skipping Rope",
+        "price": 15,
+        "category": "Fitness",
+        "image": "rope.jpg",
+        "stock": 20
+      },
+  
+      {
+        "id": 10,
+        "name": "Cookware Set",
+        "price": 100,
+        "category": "Home & Kitchen",
+        "image": "cookware.jpg",
+        "stock": 4
+      },
+      {
+        "id": 11,
+        "name": "Electric Kettle",
+        "price": 45,
+        "category": "Home & Kitchen",
+        "image": "kettle.jpg",
+        "stock": 9
+      },
+      {
+        "id": 12,
+        "name": "Cutlery Set",
+        "price": 30,
+        "category": "Home & Kitchen",
+        "image": "cutlery.jpg",
+        "stock": 14
+      },
+  
+      {
+        "id": 13,
+        "name": "Sci-Fi Novel",
+        "price": 18,
+        "category": "Books",
+        "image": "scifi.jpg",
+        "stock": 10
+      },
+      {
+        "id": 14,
+        "name": "Self-Help Book",
+        "price": 22,
+        "category": "Books",
+        "image": "selfhelp.jpg",
+        "stock": 7
+      },
+      {
+        "id": 15,
+        "name": "Mystery Thriller",
+        "price": 20,
+        "category": "Books",
+        "image": "mystery.jpg",
+        "stock": 5
+      }
+    ],
+    "cart": []
+  }
