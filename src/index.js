@@ -40,7 +40,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 button.setAttribute("data-id", product.id);
                 
                 if (product.stock === 0) {
-                    name.style.textDecoration = "line-through";
                     const soldOutMessage = document.createElement("p");
                     soldOutMessage.textContent = "Sold Out";
                     soldOutMessage.style.color = "red";
@@ -55,7 +54,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         product.stock--;
                         stock.textContent = `Stock: ${product.stock}`;
                         if (product.stock === 0) {
-                            name.style.textDecoration = "line-through";
                             const soldOutMessage = document.createElement("p");
                             soldOutMessage.textContent = "Sold Out";
                             soldOutMessage.style.color = "red";
