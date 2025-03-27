@@ -5,7 +5,7 @@
         "name": "Wireless Headphones",
         "price": 50,
         "category": "Electronics",
-        "image": "headphones.jpg",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSi9UZ4HrDDjDcQp8_-hkBKmVhnCKK0s9viQw&s",
         "stock": 10
       },
       {
@@ -13,7 +13,7 @@
         "name": "Smartphone Stand",
         "price": 20,
         "category": "Electronics",
-        "image": "stand.jpg",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLW7Fzx7e0Puv6ryRXMUAeTgze-7t6hWAkyQ&s",
         "stock": 15
       },
       {
@@ -21,7 +21,7 @@
         "name": "Bluetooth Speaker",
         "price": 40,
         "category": "Electronics",
-        "image": "speaker.jpg",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvNIKEEM1qRH5IfocI9z9V7U487hNXs1qllA&s",
         "stock": 8
       },
       
@@ -30,7 +30,7 @@
         "name": "Running Shoes",
         "price": 75,
         "category": "Fashion",
-        "image": "shoes.jpg",
+        "image": "https://www.badeqshop.co.ke/cdn/shop/products/pegasus1961.jpg?v=1640084024",
         "stock": 5
       },
       {
@@ -38,7 +38,7 @@
         "name": "Leather Wallet",
         "price": 35,
         "category": "Fashion",
-        "image": "wallet.jpg",
+        "image": "https://thegentlemansden.org/cdn/shop/products/C61A8854.jpg?v=1709037693",
         "stock": 12
       },
       {
@@ -46,7 +46,7 @@
         "name": "Sunglasses",
         "price": 25,
         "category": "Fashion",
-        "image": "sunglasses.jpg",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCQ0NidHYOKU_rDRNqLQrrQR1ptVJPBIpACQ&s",
         "stock": 10
       },
   
@@ -55,7 +55,7 @@
         "name": "Yoga Mat",
         "price": 30,
         "category": "Fitness",
-        "image": "yogamat.jpg",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-f8TsaI2RF0gkaXwjoOj5Lc7onJkYZXiVZw&s",
         "stock": 7
       },
       {
@@ -63,7 +63,7 @@
         "name": "Dumbbells Set",
         "price": 60,
         "category": "Fitness",
-        "image": "dumbbells.jpg",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhKetYg1GHd7QG3f4RGrOPLYKXp_y8mBfWqA&s",
         "stock": 6
       },
       {
@@ -71,7 +71,7 @@
         "name": "Skipping Rope",
         "price": 15,
         "category": "Fitness",
-        "image": "rope.jpg",
+        "image": "https://m.media-amazon.com/images/I/61KOG6FGBVL._AC_UF894,1000_QL80_.jpg",
         "stock": 20
       },
   
@@ -80,7 +80,7 @@
         "name": "Cookware Set",
         "price": 100,
         "category": "Home & Kitchen",
-        "image": "cookware.jpg",
+        "image": "https://www.ramtons.com/media/catalog/product/cache/5c6890e4438800e405de295a7d9fd2df/r/t/rt-108_2.jpg",
         "stock": 4
       },
       {
@@ -88,7 +88,7 @@
         "name": "Electric Kettle",
         "price": 45,
         "category": "Home & Kitchen",
-        "image": "kettle.jpg",
+        "image": "https://www.ramtons.com/media/catalog/product/cache/5c6890e4438800e405de295a7d9fd2df/r/m/rm-570.jpg",
         "stock": 9
       },
       {
@@ -96,33 +96,33 @@
         "name": "Cutlery Set",
         "price": 30,
         "category": "Home & Kitchen",
-        "image": "cutlery.jpg",
+        "image": "https://fixersforge.co.ke/wp-content/uploads/2024/01/688885799-2081981524.jpg",
         "stock": 14
       },
-  
+
       {
         "id": 13,
-        "name": "Sci-Fi Novel",
-        "price": 18,
-        "category": "Books",
-        "image": "scifi.jpg",
+        "name": "Gaming Mouse",
+        "price": 40,
+        "category": "Gaming & Accessories",
+        "image": "https://rukminim2.flixcart.com/image/850/1000/kxnl6kw0/mouse/5/8/m/wireless-gaming-mouse-rechargeable-500-mah-battery-upto-3200-dpi-original-imaga2da9yxvenhc.jpeg?q=20&crop=false",
         "stock": 10
       },
       {
         "id": 14,
-        "name": "Self-Help Book",
-        "price": 22,
-        "category": "Books",
-        "image": "selfhelp.jpg",
-        "stock": 7
+        "name": "Mechanical Keyboard",
+        "price": 70,
+        "category": "Gaming & Accessories",
+        "image": "https://m.media-amazon.com/images/I/71umGn6O2lL._AC_SL1500_.jpg",
+        "stock": 5
       },
       {
         "id": 15,
-        "name": "Mystery Thriller",
-        "price": 20,
-        "category": "Books",
-        "image": "mystery.jpg",
-        "stock": 5
+        "name": "Gaming Headset",
+        "price": 60,
+        "category": "Gaming & Accessories",
+        "image": "https://nairobicomputershop.co.ke/media/products/2022/11/G432_01.jpg",
+        "stock": 8
       }
     ],
     "cart": []
