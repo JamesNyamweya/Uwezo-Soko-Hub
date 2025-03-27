@@ -3,7 +3,7 @@
       {
         "id": 1,
         "name": "Wireless Headphones",
-        "price": 50,
+        "price": 15000,
         "category": "Electronics",
         "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSi9UZ4HrDDjDcQp8_-hkBKmVhnCKK0s9viQw&s",
         "stock": 10
@@ -11,7 +11,7 @@
       {
         "id": 2,
         "name": "Smartphone Stand",
-        "price": 20,
+        "price": 2000,
         "category": "Electronics",
         "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLW7Fzx7e0Puv6ryRXMUAeTgze-7t6hWAkyQ&s",
         "stock": 15
@@ -19,7 +19,7 @@
       {
         "id": 3,
         "name": "Bluetooth Speaker",
-        "price": 40,
+        "price": 40000,
         "category": "Electronics",
         "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvNIKEEM1qRH5IfocI9z9V7U487hNXs1qllA&s",
         "stock": 8
@@ -28,7 +28,7 @@
       {
         "id": 4,
         "name": "Running Shoes",
-        "price": 75,
+        "price": 7500,
         "category": "Fashion",
         "image": "https://www.badeqshop.co.ke/cdn/shop/products/pegasus1961.jpg?v=1640084024",
         "stock": 5
@@ -36,7 +36,7 @@
       {
         "id": 5,
         "name": "Leather Wallet",
-        "price": 35,
+        "price": 3500,
         "category": "Fashion",
         "image": "https://thegentlemansden.org/cdn/shop/products/C61A8854.jpg?v=1709037693",
         "stock": 12
@@ -44,7 +44,7 @@
       {
         "id": 6,
         "name": "Sunglasses",
-        "price": 25,
+        "price": 2500,
         "category": "Fashion",
         "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCQ0NidHYOKU_rDRNqLQrrQR1ptVJPBIpACQ&s",
         "stock": 10
@@ -53,7 +53,7 @@
       {
         "id": 7,
         "name": "Yoga Mat",
-        "price": 30,
+        "price": 3000,
         "category": "Fitness",
         "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-f8TsaI2RF0gkaXwjoOj5Lc7onJkYZXiVZw&s",
         "stock": 7
@@ -61,7 +61,7 @@
       {
         "id": 8,
         "name": "Dumbbells Set",
-        "price": 60,
+        "price": 60000,
         "category": "Fitness",
         "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhKetYg1GHd7QG3f4RGrOPLYKXp_y8mBfWqA&s",
         "stock": 6
@@ -69,7 +69,7 @@
       {
         "id": 9,
         "name": "Skipping Rope",
-        "price": 15,
+        "price": 1500,
         "category": "Fitness",
         "image": "https://m.media-amazon.com/images/I/61KOG6FGBVL._AC_UF894,1000_QL80_.jpg",
         "stock": 20
@@ -78,7 +78,7 @@
       {
         "id": 10,
         "name": "Cookware Set",
-        "price": 100,
+        "price": 10000,
         "category": "Home & Kitchen",
         "image": "https://www.ramtons.com/media/catalog/product/cache/5c6890e4438800e405de295a7d9fd2df/r/t/rt-108_2.jpg",
         "stock": 4
@@ -86,7 +86,7 @@
       {
         "id": 11,
         "name": "Electric Kettle",
-        "price": 45,
+        "price": 4500,
         "category": "Home & Kitchen",
         "image": "https://www.ramtons.com/media/catalog/product/cache/5c6890e4438800e405de295a7d9fd2df/r/m/rm-570.jpg",
         "stock": 9
@@ -94,7 +94,7 @@
       {
         "id": 12,
         "name": "Cutlery Set",
-        "price": 30,
+        "price": 3000,
         "category": "Home & Kitchen",
         "image": "https://fixersforge.co.ke/wp-content/uploads/2024/01/688885799-2081981524.jpg",
         "stock": 14
@@ -103,7 +103,7 @@
       {
         "id": 13,
         "name": "Gaming Mouse",
-        "price": 40,
+        "price": 4000,
         "category": "Gaming & Accessories",
         "image": "https://rukminim2.flixcart.com/image/850/1000/kxnl6kw0/mouse/5/8/m/wireless-gaming-mouse-rechargeable-500-mah-battery-upto-3200-dpi-original-imaga2da9yxvenhc.jpeg?q=20&crop=false",
         "stock": 10
@@ -111,7 +111,7 @@
       {
         "id": 14,
         "name": "Mechanical Keyboard",
-        "price": 70,
+        "price": 7000,
         "category": "Gaming & Accessories",
         "image": "https://m.media-amazon.com/images/I/71umGn6O2lL._AC_SL1500_.jpg",
         "stock": 5
@@ -119,7 +119,7 @@
       {
         "id": 15,
         "name": "Gaming Headset",
-        "price": 60,
+        "price": 6000,
         "category": "Gaming & Accessories",
         "image": "https://nairobicomputershop.co.ke/media/products/2022/11/G432_01.jpg",
         "stock": 8

@@ -6,14 +6,39 @@ document.addEventListener("DOMContentLoaded", () => {
             data.products.forEach(product => {
                 const productCard = document.createElement("div");
                 productCard.classList.add("product");
-                productCard.innerHTML = `
-                    <img src="${product.image}" alt="${product.name}">
-                    <h3>${product.name}</h3>
-                    <p>Category: ${product.category}</p>
-                    <p>Price: $${product.price}</p>
-                    <p>Stock: ${product.stock}</p>
-                    <button class="add-to-cart" data-id="${product.id}">Add to Cart</button>
-                `;
+                
+                const img = document.createElement("img");
+                img.src = product.image;
+                img.alt = product.name;
+                
+                const name = document.createElement("h3");
+                name.textContent = product.name;
+                
+                const category = document.createElement("p");
+                category.textContent = `Category: ${product.category}`;
+                
+                const price = document.createElement("p");
+                const formattedPrice = new Intl.NumberFormat('en-US', {
+                    style: 'currency',
+                    currency: 'KES',
+                }).format(product.price);
+                price.textContent = formattedPrice;
+                
+                const stock = document.createElement("p");
+                stock.textContent = `Stock: ${product.stock}`;
+                
+                const button = document.createElement("button");
+                button.classList.add("add-to-cart");
+                button.textContent = "Add to Cart";
+                button.setAttribute("data-id", product.id);
+                
+                productCard.appendChild(img);
+                productCard.appendChild(name);
+                productCard.appendChild(category);
+                productCard.appendChild(price);
+                productCard.appendChild(stock);
+                productCard.appendChild(button);
+                
                 productsContainer.appendChild(productCard);
             });
         })
