@@ -11,3 +11,4 @@
 1) Display a list of items.
 2) Users can search by name or filter by category.
 3) When an item is purchased, its stock reduces.
+- The link to my live site on GitHub pages is [Uwezo Soko Hub](https://jamesnyamweya.github.io/Uwezo-Soko-Hub/)
