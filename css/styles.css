@@ -18,7 +18,7 @@ header h1 {
     margin: 0;
 }
 
-/* 🔹 Updated ID from #search → #search-bar */
+
 #search-bar, #category-filter {
     padding: 10px;
     border: none;
@@ -36,7 +36,7 @@ header h1 {
     border: 1px solid #ccc;
 }
 
-/* 🔹 Align Search & Filter Inputs */
+
 .search-filter-container {
     display: flex;
     gap: 10px;
@@ -105,7 +105,7 @@ main {
     background-color: #218838;
 }
 
-/* 🔹 Enlarged & Improved Cart Pop-up */
+
 .cart-popup {
     display: none;
     position: fixed;

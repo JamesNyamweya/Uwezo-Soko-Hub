@@ -10,11 +10,13 @@ document.addEventListener("DOMContentLoaded", () => {
             const cartItemsList = document.getElementById("cart-items");
             const closeCartButton = document.getElementById("close-cart");
             const cartTotal = document.getElementById("cart-total");
+            const checkoutButton = document.getElementById("checkout-button");
             const searchInput = document.getElementById("search-bar");
             const categoryDropdown = document.getElementById("category-filter");
 
             function updateCartCount() {
-                cartCount.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
+                const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+                cartCount.textContent = totalItems;
             }
 
             function calculateTotal() {
@@ -26,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 cartItemsList.innerHTML = "";
                 cart.forEach((item, index) => {
                     const cartItem = document.createElement("li");
-                    cartItem.textContent = `${item.name} (x${item.quantity}) - ${new Intl.NumberFormat('en-US', { style: 'currency', currency: 'KES' }).format(item.price * item.quantity)}`;
+                    cartItem.textContent = `${item.name} x${item.quantity} - ${new Intl.NumberFormat('en-US', { style: 'currency', currency: 'KES' }).format(item.price * item.quantity)}`;
 
                     const removeButton = document.createElement("button");
                     removeButton.textContent = "Remove One";
@@ -75,6 +77,18 @@ document.addEventListener("DOMContentLoaded", () => {
                 cartPopup.style.display = "none";
             });
 
+            checkoutButton.addEventListener("click", () => {
+                if (cart.length === 0) {
+                    alert("Your cart is empty!");
+                    return;
+                }
+                alert("Thank you for your purchase!");
+                cart.length = 0;
+                updateCartCount();
+                renderCart();
+                calculateTotal();
+            });
+
             function renderProducts(products) {
                 productsContainer.innerHTML = "";
                 products.forEach(product => {
@@ -107,10 +121,11 @@ document.addEventListener("DOMContentLoaded", () => {
                     soldOutMessage.textContent = "Sold Out";
                     soldOutMessage.style.color = "red";
                     soldOutMessage.classList.add("sold-out-message");
+                    soldOutMessage.style.display = "none";
 
                     if (product.stock === 0) {
                         button.disabled = true;
-                        productCard.appendChild(soldOutMessage);
+                        soldOutMessage.style.display = "block";
                     }
 
                     button.addEventListener("click", () => {
@@ -121,13 +136,14 @@ document.addEventListener("DOMContentLoaded", () => {
                             } else {
                                 cart.push({ ...product, quantity: 1 });
                             }
+
                             updateCartCount();
                             product.stock--;
                             stock.textContent = `Stock: ${product.stock}`;
-
+                            
                             if (product.stock === 0) {
                                 button.disabled = true;
-                                productCard.appendChild(soldOutMessage);
+                                soldOutMessage.style.display = "block";
                             }
                         }
                     });
@@ -138,6 +154,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     productCard.appendChild(price);
                     productCard.appendChild(stock);
                     productCard.appendChild(button);
+                    productCard.appendChild(soldOutMessage);
 
                     productsContainer.appendChild(productCard);
                 });
@@ -182,10 +199,8 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             renderProducts(data.products);
-
             searchInput.addEventListener("input", searchProducts);
             categoryDropdown.addEventListener("change", filterByCategory);
         })
         .catch(error => console.error("Error fetching products:", error));
 });
-
