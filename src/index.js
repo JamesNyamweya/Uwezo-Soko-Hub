@@ -10,7 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
             const cartItemsList = document.getElementById("cart-items");
             const closeCartButton = document.getElementById("close-cart");
             const cartTotal = document.getElementById("cart-total");
-            const searchInput = document.getElementById("search");
+            const searchInput = document.getElementById("search-bar");
+            const categoryDropdown = document.getElementById("category-filter");
 
             function updateCartCount() {
                 cartCount.textContent = cart.length;
@@ -47,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 const product = data.products.find(p => p.id === item.id);
                 if (product) {
                     product.stock++;
-
+                    
                     const stockElement = document.querySelector(`[data-id='${product.id}']`).parentElement.querySelector(".stock-info");
                     stockElement.textContent = `Stock: ${product.stock}`;
 
@@ -135,23 +136,32 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
             }
 
+            // 🔍 Search function (Now works correctly!)
             function searchProducts() {
                 const query = searchInput.value.toLowerCase();
-                const productCards = document.querySelectorAll(".product");
-                let found = false;
+                const filteredProducts = data.products.filter(product => product.name.toLowerCase().includes(query));
+                renderProducts(filteredProducts);
+                showNotFoundMessage(filteredProducts.length === 0);
+            }
 
-                productCards.forEach(card => {
-                    const productName = card.querySelector("h3").textContent.toLowerCase();
-                    if (productName.includes(query) || query === "") {
-                        card.style.display = "block";
-                        found = true;
-                    } else {
-                        card.style.display = "none";
-                    }
-                });
+            // 📌 Category filter function (New)
+            function filterByCategory() {
+                const selectedCategory = categoryDropdown.value;
+                let filteredProducts = data.products;
 
+                if (selectedCategory !== "all") {
+                    filteredProducts = data.products.filter(product => product.category.toLowerCase() === selectedCategory.toLowerCase());
+                }
+
+                renderProducts(filteredProducts);
+                showNotFoundMessage(filteredProducts.length === 0);
+            }
+
+            // 🚨 Display "Item not found" message dynamically
+            function showNotFoundMessage(isNotFound) {
                 let notFoundMessage = document.getElementById("not-found-message");
-                if (!found) {
+
+                if (isNotFound) {
                     if (!notFoundMessage) {
                         notFoundMessage = document.createElement("p");
                         notFoundMessage.id = "not-found-message";
@@ -167,9 +177,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             }
 
+            // 🌟 Initial rendering of all products
             renderProducts(data.products);
 
+            // 🔹 Add event listeners for search and category filtering
             searchInput.addEventListener("input", searchProducts);
+            categoryDropdown.addEventListener("change", filterByCategory);
         })
         .catch(error => console.error("Error fetching products:", error));
 });
