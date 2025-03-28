@@ -14,11 +14,12 @@ document.addEventListener("DOMContentLoaded", () => {
             const categoryDropdown = document.getElementById("category-filter");
 
             function updateCartCount() {
-                cartCount.textContent = cart.length;
+                const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+                cartCount.textContent = totalItems;
             }
 
             function calculateTotal() {
-                const total = cart.reduce((sum, item) => sum + item.price, 0);
+                const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
                 cartTotal.textContent = `Total: ${new Intl.NumberFormat('en-US', { style: 'currency', currency: 'KES' }).format(total)}`;
             }
 
@@ -26,12 +27,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 cartItemsList.innerHTML = "";
                 cart.forEach((item, index) => {
                     const cartItem = document.createElement("li");
-                    cartItem.textContent = `${item.name} - ${new Intl.NumberFormat('en-US', { style: 'currency', currency: 'KES' }).format(item.price)}`;
+                    cartItem.textContent = `${item.name} (x${item.quantity}) - ${new Intl.NumberFormat('en-US', { style: 'currency', currency: 'KES' }).format(item.price * item.quantity)}`;
 
                     const removeButton = document.createElement("button");
                     removeButton.textContent = "Remove";
                     removeButton.addEventListener("click", () => {
-                        cart.splice(index, 1);
+                        if (item.quantity > 1) {
+                            item.quantity--;
+                        } else {
+                            cart.splice(index, 1);
+                        }
                         updateCartCount();
                         increaseStock(item);
                         renderCart();
@@ -48,15 +53,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 const product = data.products.find(p => p.id === item.id);
                 if (product) {
                     product.stock++;
-                    
                     const stockElement = document.querySelector(`[data-id='${product.id}']`).parentElement.querySelector(".stock-info");
                     stockElement.textContent = `Stock: ${product.stock}`;
-
                     if (product.stock > 0) {
-                        const soldOutMessage = document.querySelector(`[data-id='${product.id}']`).parentElement.querySelector(".sold-out-message");
-                        if (soldOutMessage) {
-                            soldOutMessage.remove();
-                        }
                         document.querySelector(`[data-id='${product.id}']`).disabled = false;
                     }
                 }
@@ -100,26 +99,21 @@ document.addEventListener("DOMContentLoaded", () => {
                     button.setAttribute("data-id", product.id);
 
                     if (product.stock === 0) {
-                        const soldOutMessage = document.createElement("p");
-                        soldOutMessage.textContent = "Sold Out";
-                        soldOutMessage.style.color = "red";
-                        soldOutMessage.classList.add("sold-out-message");
                         button.disabled = true;
-                        productCard.appendChild(soldOutMessage);
                     }
 
                     button.addEventListener("click", () => {
                         if (product.stock > 0) {
-                            cart.push(product);
+                            const existingCartItem = cart.find(item => item.id === product.id);
+                            if (existingCartItem) {
+                                existingCartItem.quantity++;
+                            } else {
+                                cart.push({ ...product, quantity: 1 });
+                            }
                             updateCartCount();
                             product.stock--;
                             stock.textContent = `Stock: ${product.stock}`;
                             if (product.stock === 0) {
-                                const soldOutMessage = document.createElement("p");
-                                soldOutMessage.textContent = "Sold Out";
-                                soldOutMessage.style.color = "red";
-                                soldOutMessage.classList.add("sold-out-message");
-                                productCard.appendChild(soldOutMessage);
                                 button.disabled = true;
                             }
                         }
@@ -136,7 +130,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
             }
 
-
             function searchProducts() {
                 const query = searchInput.value.toLowerCase();
                 const filteredProducts = data.products.filter(product => product.name.toLowerCase().includes(query));
@@ -144,23 +137,18 @@ document.addEventListener("DOMContentLoaded", () => {
                 showNotFoundMessage(filteredProducts.length === 0);
             }
 
-            
             function filterByCategory() {
                 const selectedCategory = categoryDropdown.value;
                 let filteredProducts = data.products;
-
                 if (selectedCategory !== "all") {
                     filteredProducts = data.products.filter(product => product.category.toLowerCase() === selectedCategory.toLowerCase());
                 }
-
                 renderProducts(filteredProducts);
                 showNotFoundMessage(filteredProducts.length === 0);
             }
 
-            
             function showNotFoundMessage(isNotFound) {
                 let notFoundMessage = document.getElementById("not-found-message");
-
                 if (isNotFound) {
                     if (!notFoundMessage) {
                         notFoundMessage = document.createElement("p");
@@ -177,12 +165,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             }
 
-            
             renderProducts(data.products);
-
-            
             searchInput.addEventListener("input", searchProducts);
             categoryDropdown.addEventListener("change", filterByCategory);
         })
         .catch(error => console.error("Error fetching products:", error));
 });
+
