@@ -136,7 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
             }
 
-            // 🔍 Search function (Now works correctly!)
+
             function searchProducts() {
                 const query = searchInput.value.toLowerCase();
                 const filteredProducts = data.products.filter(product => product.name.toLowerCase().includes(query));
@@ -144,7 +144,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 showNotFoundMessage(filteredProducts.length === 0);
             }
 
-            // 📌 Category filter function (New)
+            
             function filterByCategory() {
                 const selectedCategory = categoryDropdown.value;
                 let filteredProducts = data.products;
@@ -157,7 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 showNotFoundMessage(filteredProducts.length === 0);
             }
 
-            // 🚨 Display "Item not found" message dynamically
+            
             function showNotFoundMessage(isNotFound) {
                 let notFoundMessage = document.getElementById("not-found-message");
 
@@ -177,10 +177,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             }
 
-            // 🌟 Initial rendering of all products
+            
             renderProducts(data.products);
 
-            // 🔹 Add event listeners for search and category filtering
+            
             searchInput.addEventListener("input", searchProducts);
             categoryDropdown.addEventListener("change", filterByCategory);
         })
