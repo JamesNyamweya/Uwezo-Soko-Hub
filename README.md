@@ -12,3 +12,4 @@
 2) Users can search by name or filter by category.
 3) When an item is purchased, its stock reduces.
 - The link to my live site on GitHub pages is [Uwezo Soko Hub](https://jamesnyamweya.github.io/Uwezo-Soko-Hub/)
+- The link to my video presentation is [Uwezo Soko Hub Presentation](https://www.loom.com/share/9130f0b49e7d47869e70deacbf451aac?sid=840fb067-77f8-44c5-a74a-48c8455a4a14)
