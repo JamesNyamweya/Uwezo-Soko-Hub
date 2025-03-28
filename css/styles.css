@@ -18,11 +18,29 @@ header h1 {
     margin: 0;
 }
 
-#search {
+/* 🔹 Updated ID from #search → #search-bar */
+#search-bar, #category-filter {
     padding: 10px;
     border: none;
     border-radius: 5px;
-    width: 200px;
+    font-size: 16px;
+}
+
+#search-bar {
+    width: 250px;
+}
+
+#category-filter {
+    width: 180px;
+    background-color: white;
+    border: 1px solid #ccc;
+}
+
+/* 🔹 Align Search & Filter Inputs */
+.search-filter-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
 }
 
 #cart-button {
@@ -87,21 +105,25 @@ main {
     background-color: #218838;
 }
 
+/* 🔹 Enlarged & Improved Cart Pop-up */
 .cart-popup {
     display: none;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 400px;
-    height: auto;
-    max-height: 500px;
+    width: 500px;
+    max-height: 600px;
     overflow-y: auto;
     background-color: white;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
     z-index: 1000;
+}
+
+.cart-popup.show {
+    display: block;
 }
 
 #cart-items {
