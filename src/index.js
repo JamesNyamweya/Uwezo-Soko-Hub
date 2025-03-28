@@ -21,14 +21,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
             function calculateTotal() {
                 const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-                cartTotal.textContent = `Total: ${new Intl.NumberFormat('en-US', { style: 'currency', currency: 'KES' }).format(total)}`;
+                cartTotal.textContent = `Total: KES ${total.toFixed(2)}`;
             }
 
             function renderCart() {
                 cartItemsList.innerHTML = "";
                 cart.forEach((item, index) => {
                     const cartItem = document.createElement("li");
-                    cartItem.textContent = `${item.name} x${item.quantity} - ${new Intl.NumberFormat('en-US', { style: 'currency', currency: 'KES' }).format(item.price * item.quantity)}`;
+                    cartItem.textContent = `${item.name} x${item.quantity} - KES ${(item.price * item.quantity).toFixed(2)}`;
 
                     const removeButton = document.createElement("button");
                     removeButton.textContent = "Remove One";
@@ -54,14 +54,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 const product = data.products.find(p => p.id === item.id);
                 if (product) {
                     product.stock++;
-                    
                     const stockElement = document.querySelector(`[data-id='${product.id}']`).parentElement.querySelector(".stock-info");
                     stockElement.textContent = `Stock: ${product.stock}`;
 
                     if (product.stock > 0) {
                         const soldOutMessage = document.querySelector(`[data-id='${product.id}']`).parentElement.querySelector(".sold-out-message");
                         if (soldOutMessage) {
-                            soldOutMessage.remove();
+                            soldOutMessage.style.display = "none";
                         }
                         document.querySelector(`[data-id='${product.id}']`).disabled = false;
                     }
@@ -121,11 +120,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     soldOutMessage.textContent = "Sold Out";
                     soldOutMessage.style.color = "red";
                     soldOutMessage.classList.add("sold-out-message");
-                    soldOutMessage.style.display = "none";
+                    soldOutMessage.style.display = product.stock === 0 ? "block" : "none";
 
                     if (product.stock === 0) {
                         button.disabled = true;
-                        soldOutMessage.style.display = "block";
                     }
 
                     button.addEventListener("click", () => {
@@ -136,11 +134,9 @@ document.addEventListener("DOMContentLoaded", () => {
                             } else {
                                 cart.push({ ...product, quantity: 1 });
                             }
-
                             updateCartCount();
                             product.stock--;
                             stock.textContent = `Stock: ${product.stock}`;
-                            
                             if (product.stock === 0) {
                                 button.disabled = true;
                                 soldOutMessage.style.display = "block";
@@ -170,18 +166,15 @@ document.addEventListener("DOMContentLoaded", () => {
             function filterByCategory() {
                 const selectedCategory = categoryDropdown.value;
                 let filteredProducts = data.products;
-
                 if (selectedCategory !== "all") {
                     filteredProducts = data.products.filter(product => product.category.toLowerCase() === selectedCategory.toLowerCase());
                 }
-
                 renderProducts(filteredProducts);
                 showNotFoundMessage(filteredProducts.length === 0);
             }
 
             function showNotFoundMessage(isNotFound) {
                 let notFoundMessage = document.getElementById("not-found-message");
-
                 if (isNotFound) {
                     if (!notFoundMessage) {
                         notFoundMessage = document.createElement("p");
